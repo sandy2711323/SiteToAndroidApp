@@ -35,7 +35,8 @@ public class MainActivity extends Activity {
         mWebView.setWebViewClient(new MyAppWebViewClient(mProgress));
 
         // Use remote resource
-         mWebView.loadUrl("http://sandeepbalramsatone.com/");
+       //  mWebView.loadUrl("http://sandeepbalramsatone.com/");
+        mWebView.loadUrl("http://sandeepbalramsatone.com/");
 
         // Stop local links and redirects from opening in browser instead of WebView
         // mWebView.setWebViewClient(new MyAppWebViewClient());
