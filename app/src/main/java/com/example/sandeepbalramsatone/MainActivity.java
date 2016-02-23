@@ -15,6 +15,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class MainActivity extends Activity {
 
@@ -59,6 +62,17 @@ public class MainActivity extends Activity {
             // Ask user to connect to Internet
            mWebView.loadUrl("file:///android_asset/www/index.html");
            Toast.makeText(getApplicationContext(), "Please Connect to Internet ....! ", Toast.LENGTH_SHORT).show();
+            /*new Timer().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    //    mWebView.reload();
+                   // System.out.println("####");
+                   // System.out.println(mWebView.getUrl());
+                   // if (cd.isConnectingToInternet())
+                   // mWebView.loadUrl("http://sandeepbalramsatone.com/");
+
+                }
+            }, 1000, 1000);*/
         }
 
 
