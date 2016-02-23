@@ -56,7 +56,11 @@ public class MainActivity extends Activity {
 
             mProgress = ProgressDialog.show(this, "Loading", "Please wait for a moment...");
             mWebView.setWebViewClient(new MyAppWebViewClient(mProgress));
+            //mWebView.loadUrl("http://sandeepbalramsatone.com/");
             mWebView.loadUrl("http://sandeepbalramsatone.com/");
+
+
+
         } else {
             // Internet connection is not present
             // Ask user to connect to Internet
