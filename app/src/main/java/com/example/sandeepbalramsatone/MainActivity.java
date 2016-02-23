@@ -1,7 +1,10 @@
 package com.example.sandeepbalramsatone;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,6 +13,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -17,10 +21,20 @@ public class MainActivity extends Activity {
     private WebView mWebView;
     ProgressDialog mProgress;
 
+    // flag for Internet connection status
+    Boolean isInternetPresent = false;
+
+    // Connection detector class
+    ConnectionDetector cd;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        cd = new ConnectionDetector(getApplicationContext());
 
         mWebView = (WebView) findViewById(R.id.activity_main_webview);
 
@@ -31,12 +45,28 @@ public class MainActivity extends Activity {
         // Enable Javascript
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        mProgress = ProgressDialog.show(this, "Loading", "Please wait for a moment...");
-        mWebView.setWebViewClient(new MyAppWebViewClient(mProgress));
+
+        isInternetPresent = cd.isConnectingToInternet();
+        if (isInternetPresent) {
+            // Internet Connection is Present
+            // make HTTP requests
+
+            mProgress = ProgressDialog.show(this, "Loading", "Please wait for a moment...");
+            mWebView.setWebViewClient(new MyAppWebViewClient(mProgress));
+            mWebView.loadUrl("http://sandeepbalramsatone.com/");
+        } else {
+            // Internet connection is not present
+            // Ask user to connect to Internet
+           mWebView.loadUrl("file:///android_asset/www/index.html");
+           Toast.makeText(getApplicationContext(), "Please Connect to Internet ....! ", Toast.LENGTH_SHORT).show();
+        }
+
+
+
 
         // Use remote resource
        //  mWebView.loadUrl("http://sandeepbalramsatone.com/");
-        mWebView.loadUrl("http://sandeepbalramsatone.com/");
+
 
         // Stop local links and redirects from opening in browser instead of WebView
         // mWebView.setWebViewClient(new MyAppWebViewClient());
