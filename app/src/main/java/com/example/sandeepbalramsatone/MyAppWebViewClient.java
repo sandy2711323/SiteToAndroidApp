@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.view.View;
+import android.webkit.HttpAuthHandler;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -37,8 +38,11 @@ public class MyAppWebViewClient extends WebViewClient {
         }
     }
 
-
-
+    @Override
+    public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+        //super.onReceivedError(view, errorCode, description, failingUrl);
+        view.loadUrl("file:///android_asset/www/index.html");
+    }
 
 
 }
