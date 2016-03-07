@@ -5,7 +5,7 @@
   -->
 
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <title>Blank App Designer Cordova Web App Project Template</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 
@@ -36,11 +36,6 @@
 
         <link rel="stylesheet" href="css/app.css">
         <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
-        <style type="text/css">
-            body {
-    	margin-top: 0px;
-    }
-        </style>
 
         <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
         <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
@@ -68,27 +63,21 @@
     </head>
 
     <body>
-        <div align="justify">
-            <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
-            <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
-            <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
-        </div>
-        <div class="upage vertical-col left color" id="mainpage">
+        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+        <div class="upage vertical-col left color" id="mainpage" data-role="page">
             <div class="widget uib_w_1 scale-image d-margins" data-uib="media/img" data-ver="0">
                 <figure class="figure-align">
-                    <div>
-                        <img src="image/computer.png">
-                    </div>
-
+                    <img src="images/Wifi-2-icon.png">
                     <figcaption data-position="bottom"></figcaption>
                 </figure>
             </div>
-            <div class="tarea widget uib_w_2 d-margins textColor" data-uib="media/text" data-ver="0" name="uib_w_2">
+            <div class="tarea widget uib_w_2 d-margins align" data-uib="media/text" data-ver="0" name="uib_w_2">
                 <div class="widget-container left-receptacle"></div>
                 <div class="widget-container right-receptacle"></div>
                 <div class="text-container">
-                    <p align="justify"><strong>Please Connect to internet and Restart application&nbsp;</strong>
-                    </p>
+                    <p>Internet Connection not detected please connect to internet and restart the application ... !!!</p>
                 </div>
             </div>
         </div>
