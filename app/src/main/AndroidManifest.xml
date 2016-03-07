@@ -10,7 +10,7 @@
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         <activity
             android:configChanges="orientation|screenSize"
-            android:name="com.example.sandeepbalramsatone.MainActivity"
+            android:name="com.main.sandeepsatone.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

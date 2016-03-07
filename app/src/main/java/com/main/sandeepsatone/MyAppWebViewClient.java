@@ -1,4 +1,4 @@
-package com.example.sandeepbalramsatone;
+package com.main.sandeepsatone;
 
 import android.app.ProgressDialog;
 import android.content.Intent;

@@ -1,19 +1,16 @@
-package com.example.sandeepbalramsatone;
+package com.main.sandeepsatone;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.sandeepbalramsatone.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
