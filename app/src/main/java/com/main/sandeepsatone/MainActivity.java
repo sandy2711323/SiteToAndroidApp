@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -52,6 +53,16 @@ public class MainActivity extends Activity {
             // make HTTP requests
 
             mProgress = ProgressDialog.show(this, "Loading", "Please wait for a moment...");
+            mWebView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+            mWebView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+            mWebView.getSettings().setAppCacheEnabled(true);
+            mWebView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+            webSettings.setDomStorageEnabled(true);
+            webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+            webSettings.setUseWideViewPort(true);
+            webSettings.setSaveFormData(true);
+            webSettings.setEnableSmoothTransition(true);
+
             mWebView.setWebViewClient(new MyAppWebViewClient(mProgress));
             //mWebView.loadUrl("http://sandeepbalramsatone.com/");
             mWebView.loadUrl("http://www.sandeepbalramsatone.com/");
