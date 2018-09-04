@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
 
             mWebView.setWebViewClient(new MyAppWebViewClient(mProgress));
             //mWebView.loadUrl("http://sandeepbalramsatone.com/");
-            mWebView.loadUrl("http://www.sandeepbalramsatone.com/");
+            mWebView.loadUrl("http://www.sandeepsatone.com/");
 
 
 
